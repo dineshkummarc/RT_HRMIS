@@ -10,8 +10,8 @@
   <head>
     <meta charset="utf-8">
     <title>Login Page</title>
-    <link rel="icon" href="assets/img/tab-logo.png">
-    <link rel="stylesheet" href="assets/bootstrap5/css/bootstrap.min.css">
+    <link rel="icon" href="img/tab-logo.png">
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
     <style>
         *{
         margin: 0;
@@ -149,8 +149,8 @@
   </div>
 </div>
 
-<script src="assets/js/jquery.js"></script>
-<script src="assets/bootstrap5/js/bootstrap.bundle.js"></script>
+<script src="js/jquery.js"></script>
+<script src="bootstrap5/js/bootstrap.bundle.js"></script>
 </body>
 </html>
 <script>
@@ -165,23 +165,23 @@
                 $("#Login-modal-message .modal-body").text('All Fields Are Required!');
             }else{
                 $.ajax({
-                    url: "assets/php/login.php",
+                    url: "php/login.php",
                     type: "POST",
                     data: {username: username, password: password,action:"login"},
                     success: function(data){
                         if(data == 1){
-                            $(location).attr("href","assets/admin-panel.php");
+                            $(location).attr("href","admin-panel.php");
                         }else if(data == 2){
-                            $(location).attr("href","assets/supervisor-panel.php");
+                            $(location).attr("href","supervisor-panel.php");
                         }
                         else if(data == 4){
-                            $(location).attr("href","assets/finance-panel.php");
+                            $(location).attr("href","finance-panel.php");
                         }
                         else if(data == 8){
-                            $(location).attr("href","assets/project-panel.php");
+                            $(location).attr("href","project-panel.php");
                         }
                         else if(data == 10){
-                            $(location).attr("href","assets/user-panel.php");
+                            $(location).attr("href","user-panel.php");
                         }
                         else{
                             $("#Login-modal-message").modal('show');
